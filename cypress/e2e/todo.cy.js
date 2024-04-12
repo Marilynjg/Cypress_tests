@@ -24,27 +24,15 @@ describe('Agregar tareas', () => {
     cy.get('[data-testid="todo-item-label"]').dblclick()
     cy.focused().clear().type("Tarea 1 modificada{enter}")
 
-    
-
 })
-    it('Editar tarea', () => {
-    cy.visit('https://todomvc.com/examples/react/dist/')
-    cy.get('.new-todo').type('Tarea 1{enter}')
-    cy.get('[data-testid="todo-item-label"]').dblclick()
-    cy.focused().clear().type("Tarea 1 modificada{enter}")
-    cy.get('[data-testid="todo-item-toggle"]').click()
-    cy.get('.clear-completed')
-    })
-        
+
      it('Borrar tarea', () => {
     cy.visit('https://todomvc.com/examples/react/dist/')
     cy.get('.new-todo').type('Tarea 1{enter}')
-    cy.get('[data-testid="todo-item-label"]').dblclick()
-    cy.focused().clear().type("Tarea 1 modificada{enter}")
-    cy.get('[data-testid="todo-item-toggle"]').click()
-    cy.get('.clear-completed').click()
+    cy.get ('button.destroy').click({force:true})
     })
-    it('filtrar tareas', () => {
+
+    it('Filtrar tareas', () => {
      cy.visit('https://todomvc.com/examples/react/dist/')
     cy.get('.new-todo').type('Tarea 1{enter}')
     cy.get('.todo-list').contains('Tarea 1')
@@ -64,9 +52,6 @@ describe('Agregar tareas', () => {
     
 
     
-    
-    
-
 
 
         })
